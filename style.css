@@ -1,0 +1,88 @@
+:root {
+  --bg: #0b0e14;
+  --panel: #121826;
+  --text: #e8eefc;
+  --muted: #9fb0d0;
+  --line: rgba(255,255,255,0.08);
+  --btn: #1f2a44;
+  --btn2:#202b3f;
+  --good:#7CFC9A;
+  --bad:#FF6B6B;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 20px; }
+.top { display:flex; justify-content: space-between; align-items:flex-start; gap: 12px; }
+h1 { margin: 0 0 6px; font-size: 22px; }
+h2 { margin: 0 0 10px; font-size: 16px; }
+.sub { margin: 0; color: var(--muted); font-size: 12px; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 14px;
+}
+
+.stats {
+  display:grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+.stats div {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.15);
+}
+.stats span { display:block; color: var(--muted); font-size: 11px; margin-bottom: 6px; }
+.stats strong { font-size: 16px; }
+
+.muted { color: var(--muted); font-size: 12px; margin: 6px 0 12px; }
+.jobs { display:grid; grid-template-columns: 1fr; gap: 10px; }
+
+.job {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(0,0,0,0.12);
+}
+.jobTop { display:flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.jobName { font-weight: 700; }
+.jobMeta { color: var(--muted); font-size: 12px; margin-top: 6px; line-height: 1.4; }
+.pills { display:flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.pill { border: 1px solid var(--line); padding: 4px 8px; border-radius: 999px; font-size: 11px; color: var(--muted); }
+
+.actions { margin-top: 10px; display:flex; gap: 10px; }
+.garage { display:flex; gap: 10px; flex-wrap: wrap; }
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--btn);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.secondary { background: var(--btn2); }
+
+.log { margin: 0; padding-left: 18px; }
+.log li { margin: 6px 0; color: var(--muted); }
+.good { color: var(--good) !important; }
+.bad { color: var(--bad) !important; }
+
+.foot { margin-top: 14px; }
+@media (max-width: 860px) {
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
