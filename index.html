@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chip — Dispatch Console</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div>
+        <h1>Chip — Dispatch Console</h1>
+        <p class="sub">A fleet sim in an automated world. Text-first. Addictive by design.</p>
+      </div>
+      <button id="newGameBtn" class="btn secondary">New Run</button>
+    </header>
+
+    <section class="panel stats">
+      <div><span>Day</span><strong id="day">1</strong></div>
+      <div><span>Cash</span><strong id="cash">$1,000</strong></div>
+      <div><span>CARMA</span><strong id="carma">20</strong></div>
+      <div><span>Heat</span><strong id="heat">0</strong></div>
+      <div><span>Fleet</span><strong id="fleet">1</strong></div>
+      <div><span>Wear</span><strong id="wear">0%</strong></div>
+    </section>
+
+    <section class="panel">
+      <h2>Dispatch</h2>
+      <p class="muted">Pick a job. Then pick a route strategy. Outcomes are probabilistic.</p>
+
+      <div id="jobs" class="jobs"></div>
+
+      <div class="actions">
+        <button id="endDayBtn" class="btn secondary">End Day</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Garage — Floyd</h2>
+      <p class="muted">Wear builds up. Fix it cheap now or pay more later.</p>
+      <div class="garage">
+        <button id="quickFixBtn" class="btn">Quick Patch (-$150, +10 reliability now, +risk later)</button>
+        <button id="properFixBtn" class="btn">Proper Repair (-$400, reset wear)</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Log</h2>
+      <ul id="log" class="log"></ul>
+    </section>
+
+    <footer class="foot muted">
+      Tip: If you keep ignoring wear, you’ll feel it. Floyd won’t say “I told you so.” He’ll just hand you the bill.
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
