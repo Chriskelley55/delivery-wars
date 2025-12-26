@@ -22,6 +22,7 @@ body {
 .top { display:flex; justify-content: space-between; align-items:flex-start; gap: 12px; }
 h1 { margin: 0 0 6px; font-size: 22px; }
 h2 { margin: 0 0 10px; font-size: 16px; }
+.h3 { margin: 12px 0 8px; font-size: 13px; }
 .sub { margin: 0; color: var(--muted); font-size: 12px; }
 
 .panel {
@@ -58,10 +59,9 @@ h2 { margin: 0 0 10px; font-size: 16px; }
 .jobTop { display:flex; justify-content: space-between; gap: 10px; align-items: baseline; }
 .jobName { font-weight: 700; }
 .jobMeta { color: var(--muted); font-size: 12px; margin-top: 6px; line-height: 1.4; }
-.pills { display:flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
-.pill { border: 1px solid var(--line); padding: 4px 8px; border-radius: 999px; font-size: 11px; color: var(--muted); }
+.pills { display:flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
 
-.actions { margin-top: 10px; display:flex; gap: 10px; }
+.actions { margin-top: 10px; display:flex; gap: 10px; flex-wrap: wrap; }
 .garage { display:flex; gap: 10px; flex-wrap: wrap; }
 
 .btn {
@@ -81,6 +81,14 @@ h2 { margin: 0 0 10px; font-size: 16px; }
 .log li { margin: 6px 0; color: var(--muted); }
 .good { color: var(--good) !important; }
 .bad { color: var(--bad) !important; }
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 12px 0;
+}
+
+.gasBlock { display: none; } /* shown only when Colt is active */
 
 .foot { margin-top: 14px; }
 @media (max-width: 860px) {
