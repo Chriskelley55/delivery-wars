@@ -11,7 +11,7 @@
     <header class="top">
       <div>
         <h1>Chip — Dispatch Console</h1>
-        <p class="sub">A fleet sim in an automated world. Text-first. Addictive by design.</p>
+        <p class="sub">Fleet ops in an automated world. Text-first. Addictive by design.</p>
       </div>
       <button id="newGameBtn" class="btn secondary">New Run</button>
     </header>
@@ -22,39 +22,51 @@
       <div><span>CARMA</span><strong id="carma">20</strong></div>
       <div><span>Heat</span><strong id="heat">0</strong></div>
       <div><span>Fleet</span><strong id="fleet">1</strong></div>
+
+      <div><span>Active</span><strong id="activeCar">Dream</strong></div>
       <div><span>Wear</span><strong id="wear">0%</strong></div>
+      <div><span>Charge</span><strong id="charge">100%</strong></div>
+      <div><span>Fuel</span><strong id="fuel">EV</strong></div>
+
+      <div><span>Elec ($/kWh)</span><strong id="elecPrice">$0.22</strong></div>
+      <div><span>Gas ($/gal)</span><strong id="gasPrice">$4.20</strong></div>
     </section>
 
     <section class="panel">
       <h2>Dispatch</h2>
-      <p class="muted">Pick a job. Then pick a route strategy. Outcomes are probabilistic.</p>
-
+      <p class="muted">Pick a job, then pick a route strategy. If your active vehicle can’t cover the miles, you’ll need to charge.</p>
       <div id="jobs" class="jobs"></div>
 
       <div class="actions">
         <button id="endDayBtn" class="btn secondary">End Day</button>
+        <button id="nextCarBtn" class="btn secondary">Next Vehicle</button>
       </div>
     </section>
 
     <section class="panel">
       <h2>Garage — Floyd</h2>
-      <p class="muted">Wear builds up. Fix it cheap now or pay more later.</p>
+      <p class="muted">Wear builds up. Repairs apply to the active vehicle.</p>
+
       <div class="garage">
-        <button id="quickFixBtn" class="btn">Quick Patch (-$150, +10 reliability now, +risk later)</button>
+        <button id="quickFixBtn" class="btn">Quick Patch (-$150, -wear a little)</button>
         <button id="properFixBtn" class="btn">Proper Repair (-$400, reset wear)</button>
       </div>
-    </section>
 
-    <section class="panel">
-      <h2>Log</h2>
-      <ul id="log" class="log"></ul>
-    </section>
+      <div class="divider"></div>
 
-    <footer class="foot muted">
-      Tip: If you keep ignoring wear, you’ll feel it. Floyd won’t say “I told you so.” He’ll just hand you the bill.
-    </footer>
-  </main>
+      <h3 class="h3">Charging</h3>
+      <p class="muted">Charge to full. Garage is safest; docks trade cost vs risk.</p>
 
-  <script src="game.js"></script>
-</body>
-</html>
+      <div class="garage">
+        <button id="chargeGarageBtn" class="btn">Charge @ Garage (safe)</button>
+        <button id="chargePublicBtn" class="btn">Charge @ Public Dock (expensive)</button>
+        <button id="chargeGrayBtn" class="btn">Charge @ Gray Dock (cheap, risky)</button>
+      </div>
+
+      <div id="gasBlock" class="gasBlock">
+        <div class="divider"></div>
+        <h3 class="h3">Colt — Gas</h3>
+        <p class="muted">Colt is hybrid. Refuel gas separately.</p>
+        <div class="garage">
+          <button id="refuelGarageBtn" class="btn">Refuel @ Garage</button>
+          <button id="refuelPublicBtn" class="btn">Refuel @
